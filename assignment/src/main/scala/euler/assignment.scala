@@ -12,18 +12,47 @@ object ProjectEuler {
    * By considering the terms in the Fibonacci sequence whose values do not
    * exceed four million, find the sum of the even-valued terms.
    */
-  def problem2(): Int = ???
+  def problem3(newV:Int, lastV:Int, count:Int):Unit = {
+		// alustusarvot problem2(1,0,0)
+		var newVal = newV
+		var lastVal = lastV
+		var temp = newVal
+		var countS = count
+		if(newVal <= 4000000) {
+		  newVal = newVal + lastVal // for example 1 and 0 --> 
+		  println(newVal)
+		  lastVal = temp
+		if(newVal % 2 == 0) {
+		  countS = countS + newVal
+		  println(countS)
+        }
+		  problem3(newVal,lastVal,countS)
+		}
+} 
 
   /*
    * Largest palindrome product
    *
    * A palindromic number reads the same both ways. The largest palindrome made
-   * from the product of two 2-digit numbers is 9009 = 91 Ã— 99.
+   * from the product of two 2-digit numbers is 9009 = 91 × 99.
    *
    * Find the largest palindrome made from the product of two 3-digit numbers.
    *
    */
-  def problem4(): Int = ???
+def problem4(first:Int, second:Int):Int = {
+	var calculus = first * second 
+	var convert = calculus.toString()
+	var secondC = convert.reverse
+	if(convert == secondC) {
+	  calculus  = convert.toInt
+	  println("You got it right")
+	}else{
+	  println("You got it wrong")
+	  calculus = first * second
+	}
+	println(calculus)
+	return calculus
+}
 
   /*
    * Special Pythagorean triplet
@@ -36,7 +65,23 @@ object ProjectEuler {
    * There exists exactly one Pythagorean triplet for which a + b + c = 1000.
    * Find the product abc.
    */
-  def problem9(): Int = ???
+  def problem9(first:Int, second:Int, third:Int): Int = {
+  var returnV = 0
+  var a = first * first
+  var b = second * second
+  var c = third * third
+  var sumAB = a + b
+  if(sumAB == c) {
+    returnV = sumAB
+    println("You got it right")
+  }else{
+    returnV = sumAB
+    println("You got it wrong")
+  }
+  println(returnV)
+  return returnV  
+}
+
 
 
   /*

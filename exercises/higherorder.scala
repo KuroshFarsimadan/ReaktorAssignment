@@ -1,18 +1,25 @@
 object HigherOrderFunctions {
 
     // returns a function that increments a given argument with a predefined amount
-    def plus(x:Int):(Int => Int) = (y:Int) => ???
+    def plus(x:Int):(Int => Int) = (y:Int) => y + x
 
     // returns a function that subtracts a given argument with a predefined amount
-    def minus(x:Int):(Int => Int) = ???
+    def minus(x:Int):(Int => Int) = (y:Int) => y - x
 
     // calls 'action' function with the given x argument and returns the result
-    def doIt(x:Int, action: (Int => Int)):Int = ???
+    def doIt(x:Int, action: (Int => Int)):Int = action(x:Int) 
+    
 
     /** combines two functions that both take integer arguments by passing the result from
       * the first function as the argument to the second function, and returns its return value
       */
-    def combineInt(first: (Int => Int), second: (Int => Int)):(Int => Int) = ???
+    def combineInt(first: (Int => Int), second: (Int => Int)):(Int => Int) = 
+    combineInt(first, second)
+    //first(:Int):Int {
+    //second(Int:Int):Int
+    //first(second: (Int => Int))
+    
+
 
     // combines two functions of generic types
     def combine[A, B, C](first: (A => B), second: (B => C)):(A => C) = ???
