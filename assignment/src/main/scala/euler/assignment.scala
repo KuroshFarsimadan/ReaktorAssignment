@@ -100,7 +100,13 @@ def problem4(first:Int, second:Int):Int = {
    * Find the maximum total from top to bottom of the given triangle with 15
    * rows:
    */
-  def problem18(triangle: List[List[Int]]): Int = ???
+  //Vaiheessa
+  def problem18(triangle: List[List[Int]]): Int = {
+  var sum = 0
+  triangle.map((x) => sum += x.max )
+  println(sum)
+  return sum
+}
 
   /*
    * Maximum path sum II
